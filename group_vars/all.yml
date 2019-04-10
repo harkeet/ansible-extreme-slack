@@ -1,1 +1,5 @@
-af
+---
+ansible_network_os: exos
+ansible_connection: network_cli
+ansible_user: demo
+ansible_ssh_pass: demopass123
