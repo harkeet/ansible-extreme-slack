@@ -7,10 +7,20 @@
     exos_command:
       commands:
         - show version
-        - show vlan
     register: output
    
   - name: Send notification message via Slack
     slack:
       token: TFNPHUU59/BHVTLCN5C/uv6TVCNIFkYMe9Ot2e3V2Se2
-      msg: 'Status of Extreme Exos Switch on host {{ ansible_hostname }} is {{ output.stdout_lines }}' 
+      msg: 'Extreme Exos Switch output for version------> {{ output.stdout_lines }}'
+  
+  - name: run show version on remote devices
+    exos_command:
+      commands:
+        - show vlan
+    register: vlan
+
+  - name: Send notification message via Slack
+    slack:
+      token: TFNPHUU59/BHVTLCN5C/uv6TVCNIFkYMe9Ot2e3V2Se2
+      msg: 'Extreme Exos Switch output for vlan------>  {{ vlan.stdout_lines }}'
