@@ -1,4 +1,8 @@
-tasks:
+---
+- hosts: switches
+  connection: local
+  
+  tasks:
   - name: run show version on remote devices
     exos_command:
       commands: show version
