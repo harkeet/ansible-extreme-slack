@@ -5,4 +5,6 @@
   tasks:
   - name: run show version on remote devices
     exos_command:
-      commands: show version
+      commands:
+        - show version
+        - show vlan
