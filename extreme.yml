@@ -11,7 +11,7 @@
    
   - name: Send notification message via Slack
     slack:
-      token: TFNPHUU59/BHVTLCN5C/uv6TVCNIFkYMe9Ot2e3V2Se2
+      token: TFNPHUU59/BHVTLCN5C/u
       msg: 'Extreme Exos Switch output for version------> {{ output.stdout_lines }}'
   
   - name: run show version on remote devices
@@ -22,5 +22,5 @@
 
   - name: Send notification message via Slack
     slack:
-      token: TFNPHUU59/BHVTLCN5C/uv6TVCNIFkYMe9Ot2e3V2Se2
+      token: TFNPHUU59/BHVTLCN5C/u
       msg: 'Extreme Exos Switch output for vlan------>  {{ vlan.stdout_lines }}'
